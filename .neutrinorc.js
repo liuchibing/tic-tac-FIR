@@ -7,14 +7,14 @@ module.exports = {
         html: {
           title: 'tic-tac-FIR'
         },
-        
+
         babel: {
           plugins: [
-              ['import', {
-                  libraryName: 'antd',
-                  libraryDirectory: 'es',
-                  style: 'css'
-              }]
+            ['import', {
+              libraryName: 'antd',
+              libraryDirectory: 'es',
+              style: 'css'
+            }]
           ]
         }
       }
