@@ -1,16 +1,17 @@
-import { Component } from 'react';
-import './App.css';
+import { Component } from 'react'
+import { Switch, Route } from 'react-router-dom'
+import './App.css'
+
+import Landing from './Landing'
 
 export default class App extends Component {
-  state = {
-    name: 'tic-tac-FIR'
-  };
-
-  render() {
+  render () {
     return (
-      <div className="App">
-        <h1>Welcome to {this.state.name}</h1>
+      <div className='App'>
+        <Switch>
+          <Route path='/' component={Landing} />
+        </Switch>
       </div>
-    );
+    )
   }
 }
