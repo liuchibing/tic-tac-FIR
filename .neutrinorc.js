@@ -5,7 +5,8 @@ module.exports = {
       '@neutrinojs/react',
       {
         html: {
-          title: 'tic-tac-FIR'
+          title: 'tic-tac-FIR',
+          lang: 'zh'
         },
 
         babel: {

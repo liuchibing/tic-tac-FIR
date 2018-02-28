@@ -8,12 +8,10 @@ import WaitPeer from './WaitPeer'
 export default class App extends Component {
   render () {
     return (
-      <div className='App'>
-        <Switch>
-          <Route path='/:room' component={WaitPeer} />
-          <Route path='/' component={Landing} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path='/:room' component={WaitPeer} />
+        <Route path='/' component={Landing} />
+      </Switch>
     )
   }
 }
