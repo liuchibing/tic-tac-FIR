@@ -1,5 +1,7 @@
 import { Component } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import 'antd/dist/antd.css'
 import { Layout, Row, Col, Button, Slider, Divider } from 'antd'
 
@@ -34,6 +36,11 @@ class ChooseFirst extends Component {
             <Col>
               <div style={{ textAlign: 'center', fontSize: '3rem' }}>{this.props.peerRandom || 8}</div>
               <Button size='large' type='primary' loading disabled style={{ marginRight: '1rem' }}>生成随机数</Button>
+            </Col>
+          </Row>
+          <Row type='flex' justify='center'>
+            <Col>
+              <Link to='/8374/game'><Button size='large' shape='circle' type='primary' icon='arrow-right' /></Link>
             </Col>
           </Row>
         </Layout.Content>
