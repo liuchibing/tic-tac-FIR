@@ -14,7 +14,7 @@ class ChooseFirst extends Component {
           {!this.props.isHost
             ? <div>
               <Row type='flex' justify='center'><Col>
-                <p style={{ textAlign: 'center' }}>选择棋盘大小：</p>
+                <h2>选择棋盘大小：</h2>
               </Col></Row>
               <Row type='flex' justify='center'><Col style={{ width: '80%' }}>
                 <Slider min={5} max={19} defaultValue={15} marks={{
@@ -29,6 +29,9 @@ class ChooseFirst extends Component {
             </div>
             : null}
           <Row type='flex' justify='center'>
+            <Row type='flex' justify='center'><Col>
+              <h2>选择先行方：</h2>
+            </Col></Row>
             <Col>
               <div style={{ textAlign: 'center', fontSize: '3rem' }}>{this.props.myRandom || 5}</div>
               <Button size='large' type='primary' style={{ marginRight: '1rem' }}>生成随机数</Button>
@@ -40,7 +43,7 @@ class ChooseFirst extends Component {
           </Row>
           <Row type='flex' justify='center'>
             <Col>
-              <Link to='/8374/game'><Button size='large' shape='circle' type='primary' icon='arrow-right' /></Link>
+              <Link to='/8374/game'><Button size='large' shape='circle' type='primary' icon='arrow-right' style={{ marginTop: '1rem' }} /></Link>
             </Col>
           </Row>
         </Layout.Content>
