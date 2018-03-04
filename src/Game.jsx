@@ -3,7 +3,7 @@ import { Component } from 'react'
 import 'antd/dist/antd.css'
 import { Layout, Row, Col } from 'antd'
 
-class Landing extends Component {
+class Game extends Component {
   gameBoard = [
     [ 'X', 'O', 'X' ],
     [ 'X', 'O', 'X' ],
@@ -18,21 +18,17 @@ class Landing extends Component {
           <Row type='flex' justify='center'><Col>{this.props.nextPlayer === this.props.myColor ? '请落子' : '请等待对方落子' }</Col></Row>
           <Row type='flex'>
             <Col>
-              <table>
-                <tbody>
-                  { this.gameBoard.map((row, y) => {
-                    return (
-                      <tr key={y}>
-                        {row.map((value, x) => {
-                          return (
-                            <td key={x}>{value}</td>
-                          )
-                        })}
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
+              { this.gameBoard.map((row, y) => {
+                return (
+                  <div className='board-row' key={y}>
+                    {row.map((value, x) => {
+                      return (
+                        <div className='square' key={x}>{value}</div>
+                      )
+                    })}
+                  </div>
+                )
+              })}
             </Col>
           </Row>
         </Layout.Content>
@@ -41,4 +37,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing
+export default Game
