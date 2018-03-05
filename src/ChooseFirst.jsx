@@ -2,8 +2,16 @@ import { Component } from 'react'
 
 import { Link } from 'react-router-dom'
 
-import 'antd/dist/antd.css'
-import { Layout, Row, Col, Button, Slider, Divider } from 'antd'
+import Layout from 'antd/es/layout'
+import 'antd/es/layout/style/css'
+import { Row, Col } from 'antd/es/grid'
+import 'antd/es/grid/style/css'
+import Button from 'antd/es/button'
+import 'antd/es/button/style/css'
+import Slider from 'antd/es/slider'
+import 'antd/es/slider/style/css'
+import Divider from 'antd/es/divider'
+import 'antd/es/divider/style/css'
 
 class ChooseFirst extends Component {
   render () {
@@ -28,10 +36,10 @@ class ChooseFirst extends Component {
               <Divider />
             </div>
             : null}
+          <Row type='flex' justify='center'><Col>
+            <h2>选择先行方：</h2>
+          </Col></Row>
           <Row type='flex' justify='center'>
-            <Row type='flex' justify='center'><Col>
-              <h2>选择先行方：</h2>
-            </Col></Row>
             <Col>
               <div style={{ textAlign: 'center', fontSize: '3rem' }}>{this.props.myRandom || 5}</div>
               <Button size='large' type='primary' style={{ marginRight: '1rem' }}>生成随机数</Button>

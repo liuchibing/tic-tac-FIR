@@ -1,8 +1,14 @@
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import 'antd/dist/antd.css'
-import { Layout, Row, Col, Input, Button } from 'antd'
+import Layout from 'antd/es/layout'
+import 'antd/es/layout/style/css'
+import { Row, Col } from 'antd/es/grid'
+import 'antd/es/grid/style/css'
+import Input from 'antd/es/input'
+import 'antd/es/input/style/css'
+import Button from 'antd/es/button'
+import 'antd/es/button/style/css'
 
 class EnterRoom extends Component {
   render () {

@@ -2,6 +2,10 @@
   padding: 20px;
 }
 
+.board {
+  overflow: auto;
+}
+
 .board-row {
   display: flex;
   flex-direction: row;

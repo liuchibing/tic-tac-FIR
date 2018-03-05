@@ -1,7 +1,9 @@
 import { Component } from 'react'
 
-import 'antd/dist/antd.css'
-import { Layout, Row, Col } from 'antd'
+import Layout from 'antd/es/layout'
+import 'antd/es/layout/style/css'
+import { Row, Col } from 'antd/es/grid'
+import 'antd/es/grid/style/css'
 
 class WaitPeer extends Component {
   render () {
