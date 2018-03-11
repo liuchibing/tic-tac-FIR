@@ -4,6 +4,8 @@ module.exports = {
     [
       '@neutrinojs/react',
       {
+        publicPath: '/',
+          
         html: {
           title: 'Tic-Tac-FIR',
           lang: 'zh'

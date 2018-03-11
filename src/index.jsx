@@ -8,7 +8,7 @@ import createSagaMiddleware from 'redux-saga'
 import reducer from './reducers'
 import rootSaga from './sagas'
 
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(
@@ -17,13 +17,15 @@ const store = createStore(
 )
 sagaMiddleware.run(rootSaga, store.dispatch.bind(store))
 
+console.log(store)
+
 const root = document.getElementById('root')
 const load = () => render((
   <AppContainer>
     <Provider store={store}>
-      <HashRouter>
+      <BrowserRouter>
         <App />
-      </HashRouter>
+      </BrowserRouter>
     </Provider>
   </AppContainer>
 ), root)

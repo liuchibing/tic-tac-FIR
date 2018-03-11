@@ -1,0 +1,21 @@
+export const INIT = 'INIT'
+export const INIT_SUCCESS = 'INIT_SUCCESS'
+
+export const CREATE_GAME = 'CREATE_GAME'
+export const GAME_CREATED = 'GAME_CREATED'
+export const GAME_CREATE_FAILED = 'GAME_CREATE-FAILED'
+
+export const PEER_ENTERED = 'PEER_ENTERED'
+
+export const ENTER_GAME = 'ENTER_GAME'
+export const GAME_ENTERED = 'GAME_ENTERED'
+export const GAME_ENTER_FAILED = 'GAME_ENTER_FAILED'
+
+export const CHANGE_BOARD_SIZE = 'CHANGE_BOARD_SIZE'
+
+export const GENERATE_MY_RANDOM = 'GENERATE_MY_RANDOM'
+export const MY_RANDOM_GENERATED = 'MY_RANDOM_GENERATED'
+export const PEER_RANDOM_RECEIVED = 'PEER_RANDOM_RECEIVED'
+
+export const GOTO_BOARD = 'GOTO_BOARD'
+export const DROP = 'DROP'

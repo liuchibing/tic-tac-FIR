@@ -3,7 +3,7 @@
 }
 
 .board {
-  overflow: auto;
+    overflow: scroll;
 }
 
 .board-row {
@@ -24,4 +24,5 @@
   padding: 0;
   text-align: center;
   width: 34px;
+  min-width: 34px;
 }
