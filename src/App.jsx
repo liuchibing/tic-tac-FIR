@@ -8,16 +8,18 @@ import EnterRoom from './EnterRoom'
 import ChooseFirst from './ChooseFirst'
 import Game from './Game'
 
-export default class App extends Component {
+class App extends Component {
   render () {
     return (
       <Switch>
-        <Route exact path='/:room/wait' component={WaitPeer} />
-        <Route exact path='/:room/choosefirst' component={ChooseFirst} />
-        <Route exact path='/:room/game' component={Game} />
+        <Route exact path='/wait' component={WaitPeer} />
+        <Route exact path='/choosefirst' component={ChooseFirst} />
+        <Route exact path='/game' component={Game} />
         <Route exact path='/enter' component={EnterRoom} />
         <Route exact path='/' component={Landing} />
       </Switch>
     )
   }
 }
+
+export default App

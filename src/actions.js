@@ -1,9 +1,10 @@
 export const INIT = 'INIT'
 export const INIT_SUCCESS = 'INIT_SUCCESS'
+export const INIT_FAILED = 'INIT_FAILED'
 
 export const CREATE_GAME = 'CREATE_GAME'
 export const GAME_CREATED = 'GAME_CREATED'
-export const GAME_CREATE_FAILED = 'GAME_CREATE-FAILED'
+export const GAME_CREATE_FAILED = 'GAME_CREATE_FAILED'
 
 export const PEER_ENTERED = 'PEER_ENTERED'
 
@@ -19,3 +20,5 @@ export const PEER_RANDOM_RECEIVED = 'PEER_RANDOM_RECEIVED'
 
 export const GOTO_BOARD = 'GOTO_BOARD'
 export const DROP = 'DROP'
+
+export const ERROR = 'ERROR'

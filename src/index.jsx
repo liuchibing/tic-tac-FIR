@@ -17,8 +17,6 @@ const store = createStore(
 )
 sagaMiddleware.run(rootSaga, store.dispatch.bind(store))
 
-console.log(store)
-
 const root = document.getElementById('root')
 const load = () => render((
   <AppContainer>
@@ -32,7 +30,11 @@ const load = () => render((
 
 // This is needed for Hot Module Replacement
 if (module.hot) {
-  module.hot.accept(load)
+  module.hot.accept(() => {
+    load()
+    const nextReducer = require('./reducers')
+    store.replaceReducer(nextReducer)
+  })
 }
 
 load()
