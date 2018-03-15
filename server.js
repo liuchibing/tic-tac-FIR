@@ -5,7 +5,8 @@ var io = require('socket.io')(server)
 
 app.use(express.static('./build'))
 app.get('*', (req, res) => {
-  res.sendFile('index.html', { root: './build' })
+  // res.sendFile('index.html', { root: './build' })
+  res.redirect('/')
 })
 
 server.listen(8080)

@@ -2,6 +2,8 @@ import { Component } from 'react'
 
 import { connect } from 'react-redux'
 
+import { Prompt } from 'react-router-dom'
+
 import Layout from 'antd/es/layout'
 import 'antd/es/layout/style/css'
 import { Row, Col } from 'antd/es/grid'
@@ -40,6 +42,7 @@ class GameComp extends Component {
               })}
             </Col>
           </Row>
+          <Prompt when message='前进和后退会导致游戏的状态错乱。如果想重新开始，请直接刷新。是否仍要离开？' />
         </Layout.Content>
       </Layout>
     )

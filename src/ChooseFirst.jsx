@@ -11,6 +11,8 @@ import Slider from 'antd/es/slider'
 import 'antd/es/slider/style/css'
 import Divider from 'antd/es/divider'
 import 'antd/es/divider/style/css'
+import Icon from 'antd/es/icon'
+import 'antd/es/icon/style/css'
 import message from 'antd/es/message'
 import 'antd/es/message/style/css'
 
@@ -40,12 +42,12 @@ class ChooseFirstComp extends Component {
           </Col></Row>
           <Row type='flex' justify='center'>
             <Col>
-              <div style={{ textAlign: 'center', fontSize: '3rem' }}>{this.props.myRandom || ' '}</div>
-              <Button size='large' type='primary' onClick={this.props.onGenerateMyRandom.bind(this)} style={{ marginRight: '1rem' }}>生成随机数</Button>
+              <div style={{ textAlign: 'center', fontSize: '3rem' }}>{this.props.myRandom || <Icon type='loading' style={{ color: '#1890ff' }} />}</div>
+              <Button size='large' type='primary' disabled={this.props.color} onClick={this.props.onGenerateMyRandom.bind(this)} style={{ marginRight: '1rem' }}>生成随机数</Button>
             </Col>
             <Col>
-              <div style={{ textAlign: 'center', fontSize: '3rem' }}>{this.props.peerRandom || ' '}</div>
-              <Button size='large' type='primary' loading disabled style={{ marginRight: '1rem' }}>生成随机数</Button>
+              <div style={{ textAlign: 'center', fontSize: '3rem' }}>{this.props.peerRandom || <Icon type='loading' style={{ color: '#1890ff' }} />}</div>
+              <Button size='large' type='primary' disabled style={{ marginRight: '1rem' }}>生成随机数</Button>
             </Col>
           </Row>
           {this.props.isHost ? (
