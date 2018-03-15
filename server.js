@@ -9,12 +9,12 @@ app.get('*', (req, res) => {
   res.redirect('/')
 })
 
-server.listen(8080)
+server.listen(80)
 
 var rooms = {}
 
 io.on('connection', function (socket) {
-  console.log(`client ${socket.id} connected.`)
+  // console.log(`client ${socket.id} connected.`)
   socket.once('INIT', function (data) {
     if (data === 'Tic-Tac-FIR/1.0 CONNECT') {
       socket.emit('INIT', 'Tic-Tac-FIR/1.0 OK')

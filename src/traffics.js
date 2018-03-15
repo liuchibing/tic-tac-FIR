@@ -6,7 +6,7 @@ var socket = null
 
 export function init () {
   return new Promise(function (resolve, reject) {
-    socket = io.connect(':8080')
+    socket = io.connect()
     var connected = false
     socket.once(actions.INIT, (data) => {
       if (data === 'Tic-Tac-FIR/1.0 OK') {

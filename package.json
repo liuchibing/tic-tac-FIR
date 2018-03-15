@@ -9,7 +9,8 @@
     "build": "neutrino build",
     "start": "neutrino start",
     "lint": "neutrino lint",
-    "test": "neutrino test"
+    "test": "neutrino test",
+    "now-start": "node server.js"
   },
   "dependencies": {
     "antd": "^3.2.2",
