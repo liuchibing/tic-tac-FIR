@@ -16,6 +16,7 @@
 
 import { combineReducers } from 'redux'
 import * as actions from './actions'
+import calcWinner from './calcWinner'
 
 const combined = combineReducers({
   connected,
@@ -176,109 +177,6 @@ function color (state = {}) {
   -3 -2 -1
 */
 function winner (state = { winner: null }, action) {
-  if (state.winner) return state.winner
   if (action.type !== actions.DROP) return state.winner
-  let _color = action.color
-  // direction #1
-  let count = 0
-  let y = action.y - 1
-  let x = action.x - 1
-  while (y >= 0 && y < state.boardSize && x >= 0 && x < state.boardSize) {
-    if (state.board[y][x] === _color) {
-      count++
-      y--
-      x--
-      continue
-    }
-    break
-  }
-  // direction #-1
-  y = action.y + 1
-  x = action.x + 1
-  while (y >= 0 && y < state.boardSize && x >= 0 && x < state.boardSize) {
-    if (state.board[y][x] === _color) {
-      count++
-      y++
-      x++
-      continue
-    }
-    break
-  }
-  if (count === 4) return _color
-
-  // direction #2
-  count = 0
-  y = action.y - 1
-  x = action.x
-  while (y >= 0 && y < state.boardSize) {
-    if (state.board[y][x] === _color) {
-      count++
-      y--
-      continue
-    }
-    break
-  }
-  // direction #-2
-  y = action.y + 1
-  while (y >= 0 && y < state.boardSize) {
-    if (state.board[y][x] === _color) {
-      count++
-      y++
-      continue
-    }
-    break
-  }
-  if (count === 4) return _color
-
-  // direction #3
-  count = 0
-  y = action.y - 1
-  x = action.x + 1
-  while (y >= 0 && y < state.boardSize && x >= 0 && x < state.boardSize) {
-    if (state.board[y][x] === _color) {
-      count++
-      y--
-      x++
-      continue
-    }
-    break
-  }
-  // direction #-3
-  y = action.y + 1
-  x = action.x - 1
-  while (y >= 0 && y < state.boardSize && x >= 0 && x < state.boardSize) {
-    if (state.board[y][x] === _color) {
-      count++
-      y++
-      x--
-      continue
-    }
-    break
-  }
-  if (count === 4) return _color
-
-  // direction #4
-  count = 0
-  y = action.y
-  x = action.x - 1
-  while (x >= 0 && x < state.boardSize) {
-    if (state.board[y][x] === _color) {
-      count++
-      x--
-      continue
-    }
-    break
-  }
-  // direction #-4
-  x = action.x - 1
-  while (x >= 0 && x < state.boardSize) {
-    if (state.board[y][x] === _color) {
-      count++
-      x++
-      continue
-    }
-    break
-  }
-  if (count === 4) return _color
-  return null
+  return calcWinner(state, action)
 }

@@ -11,13 +11,18 @@ import Game from './Game'
 class App extends Component {
   render () {
     return (
-      <Switch>
-        <Route exact path='/wait' component={WaitPeer} />
-        <Route exact path='/choosefirst' component={ChooseFirst} />
-        <Route exact path='/game' component={Game} />
-        <Route exact path='/enter' component={EnterRoom} />
-        <Route exact path='/' component={Landing} />
-      </Switch>
+      <div>
+        <Switch>
+          <Route exact path='/wait' component={WaitPeer} />
+          <Route exact path='/choosefirst' component={ChooseFirst} />
+          <Route exact path='/game' component={Game} />
+          <Route exact path='/enter' component={EnterRoom} />
+          <Route exact path='/' component={Landing} />
+        </Switch>
+        <div>
+          Copyright © 2018 Liu Chibing. All rights reserved.
+        </div>
+      </div>
     )
   }
 }
