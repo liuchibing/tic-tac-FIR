@@ -7,10 +7,8 @@ var socket = null
 export function init () {
   return new Promise(function (resolve, reject) {
     socket = io.connect()
-    var connected = false
     socket.once(actions.INIT, (data) => {
       if (data === 'Tic-Tac-FIR/1.0 OK') {
-        connected = true
         resolve()
       } else {
         reject(new Error('Response incorrect.'))
