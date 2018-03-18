@@ -11,6 +11,8 @@ import 'antd/es/grid/style/css'
 import message from 'antd/es/message'
 import 'antd/es/message/style/css'
 
+import Header from './Header'
+
 import { DROP } from './actions'
 
 class GameComp extends Component {
@@ -18,7 +20,7 @@ class GameComp extends Component {
     return (
       <Layout>
         <Layout.Content>
-          <Row type='flex' justify='center'><Col><h1 style={{ marginTop: '1rem' }}>Tic-Tac-FIR</h1></Col></Row>
+          <Header />
           <Row type='flex' justify='center' style={{ fontSize: '1.25rem' }}>
             <Col style={{ marginRight: '1rem' }}>棋子：{this.props.color}</Col>
             {!this.props.winner ? (

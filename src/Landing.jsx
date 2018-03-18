@@ -13,6 +13,8 @@ import 'antd/es/spin/style/css'
 import message from 'antd/es/message'
 import 'antd/es/message/style/css'
 
+import Header from './Header'
+
 import { INIT, CREATE_GAME } from './actions'
 
 class LandingComp extends Component {
@@ -21,7 +23,7 @@ class LandingComp extends Component {
       <Spin spinning={!this.props.connected}>
         <Layout>
           <Layout.Content>
-            <Row type='flex' justify='center'><Col><h1 style={{ marginTop: '1rem' }}>Tic-Tac-FIR</h1></Col></Row>
+            <Header />
             <Row type='flex' justify='center'><Col><Button type='primary' size='large' style={{ margin: '1rem' }} onClick={this.props.handleCreateGame.bind(this)} loading={this.props.loading}>创建游戏</Button></Col></Row>
             <Row type='flex' justify='center'><Col><Link to='/enter'><Button type='primary' size='large' style={{ margin: '1rem' }}>加入游戏</Button></Link></Col></Row>
           </Layout.Content>

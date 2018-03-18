@@ -16,6 +16,8 @@ import 'antd/es/icon/style/css'
 import message from 'antd/es/message'
 import 'antd/es/message/style/css'
 
+import Header from './Header'
+
 import { CHANGE_BOARD_SIZE, GENERATE_MY_RANDOM, GOTO_BOARD } from './actions'
 
 class ChooseFirstComp extends Component {
@@ -23,7 +25,7 @@ class ChooseFirstComp extends Component {
     return (
       <Layout>
         <Layout.Content>
-          <Row type='flex' justify='center'><Col><h1 style={{ marginTop: '1rem' }}>Tic-Tac-FIR</h1></Col></Row>
+          <Header />
           <Row type='flex' justify='center'><Col>
             <h2>选择棋盘大小：</h2>
           </Col></Row>

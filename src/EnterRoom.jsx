@@ -12,6 +12,8 @@ import 'antd/es/button/style/css'
 import message from 'antd/es/message'
 import 'antd/es/message/style/css'
 
+import Header from './Header'
+
 import { ENTER_GAME } from './actions'
 
 class EnterRoomComp extends Component {
@@ -19,7 +21,7 @@ class EnterRoomComp extends Component {
     return (
       <Layout>
         <Layout.Content>
-          <Row type='flex' justify='center'><Col><h1 style={{ marginTop: '1rem' }}>Tic-Tac-FIR</h1></Col></Row>
+          <Header />
           <Row type='flex' justify='center'><Col>
             <Input size='large' placeholder='要加入的游戏ID' ref={(node) => { this.input = node }} />
           </Col></Row>

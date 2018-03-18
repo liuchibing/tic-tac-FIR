@@ -1,5 +1,9 @@
-.App {
-  padding: 20px;
+body {
+  min-hight: 100%;
+}
+
+h1 {
+  display: inline-block;
 }
 
 .board {

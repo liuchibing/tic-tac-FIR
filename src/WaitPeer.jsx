@@ -6,12 +6,14 @@ import 'antd/es/layout/style/css'
 import { Row, Col } from 'antd/es/grid'
 import 'antd/es/grid/style/css'
 
+import Header from './Header'
+
 class WaitPeerComp extends Component {
   render () {
     return (
       <Layout>
         <Layout.Content>
-          <Row type='flex' justify='center'><Col><h1 style={{ marginTop: '1rem' }}>Tic-Tac-FIR</h1></Col></Row>
+          <Header />
           <Row type='flex' justify='center'><Col>
             <p style={{ textAlign: 'center' }}>你的游戏ID：</p>
             <p style={{ textAlign: 'center', fontSize: '3rem' }}>{this.props.gameId}</p>

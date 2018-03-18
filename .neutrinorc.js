@@ -7,7 +7,7 @@ module.exports = {
         publicPath: '/',
           
         html: {
-          title: 'Tic-Tac-FIR',
+          title: 'Tic-Tac-FIR | 五子棋',
           lang: 'zh'
         },
         
