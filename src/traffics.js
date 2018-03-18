@@ -17,9 +17,6 @@ export function init () {
       }
     })
     socket.emit(actions.INIT, 'Tic-Tac-FIR/1.0 CONNECT')
-    setTimeout(() => {
-      if (!connected) reject(new Error('Connection timed out.'))
-    }, 10 * 1000)
   })
 }
 
