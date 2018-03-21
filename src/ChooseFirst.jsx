@@ -18,7 +18,7 @@ import 'antd/es/message/style/css'
 
 import Header from './Header'
 
-import { CHANGE_BOARD_SIZE, GENERATE_MY_RANDOM, GOTO_BOARD } from './actions'
+import { PREPARE_GOTO_BOARD, CHANGE_BOARD_SIZE, GENERATE_MY_RANDOM, GOTO_BOARD } from './actions'
 
 class ChooseFirstComp extends Component {
   render () {
@@ -64,6 +64,10 @@ class ChooseFirstComp extends Component {
     )
   }
 
+  componentDidMount () {
+    this.props.componentDidMount.call(this)
+  }
+
   componentDidUpdate () {
     if (this.props.error) message.error(this.props.error.message)
   }
@@ -82,11 +86,14 @@ const ChooseFirst = connect(
   },
   (dispatch) => {
     return {
+      componentDidMount: function () {
+        dispatch({ type: PREPARE_GOTO_BOARD, history: this.props.history })
+      },
       onChange: function (value) {
         dispatch({ type: CHANGE_BOARD_SIZE, boardSize: value })
       },
       onGenerateMyRandom: function () {
-        dispatch({ type: GENERATE_MY_RANDOM, history: this.props.history })
+        dispatch({ type: GENERATE_MY_RANDOM })
       },
       onGotoBoard: function () {
         dispatch({ type: GOTO_BOARD })

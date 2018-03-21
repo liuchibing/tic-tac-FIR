@@ -64,11 +64,14 @@ function * generateMyRandom (action) {
   } catch (e) {
     put({ type: actions.ERROR, e })
   }
-  yield fork(watchGotoBoard, action.history)
 }
 
 function random () {
   return Math.floor(Math.random() * 10)
+}
+
+function * prepareGotoBoard (action) {
+  yield fork(watchGotoBoard, action.history)
 }
 
 function * gotoBoard (history) {
@@ -99,6 +102,10 @@ function * watchGenerateMyRandom () {
   yield takeEvery(actions.GENERATE_MY_RANDOM, generateMyRandom)
 }
 
+function * watchPrepareGotoBoard () {
+  yield takeEvery(actions.PREPARE_GOTO_BOARD, prepareGotoBoard)
+}
+
 function * watchGotoBoard (history) {
   yield takeEvery(actions.GOTO_BOARD, gotoBoard, history)
 }
@@ -108,6 +115,7 @@ function * rootSaga (dispatch) {
     watchInit(),
     watchCreateGame(dispatch),
     watchEnterGame(dispatch),
+    watchPrepareGotoBoard(),
     watchSendAction(),
     watchGenerateMyRandom()
   ])
